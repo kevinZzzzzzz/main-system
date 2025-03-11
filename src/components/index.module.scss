@@ -1,0 +1,72 @@
+.navComp {
+  width: 100vw;
+  height: 64px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transform: translateY(-100%);
+  &_main {
+    height: 100%;
+    position: relative;
+    &_list {
+      list-style: none;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        margin: 0 16px;
+        cursor: pointer;
+      }
+    }
+    &_icon {
+      position: absolute;
+      bottom: -50%;
+      right: 3%;
+      // transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      &-isOpen {
+        transform: translateY(-50%);
+      }
+    }
+  }
+  &-isOpen {
+    transform: translateY(0%);
+    animation: moveIn 1s;
+  }
+  // &-isClosed {
+  //   transform: translateY(-100%);
+  //   animation: moveOut 1s;
+  // }
+}
+
+@keyframes moveIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%); /* 初始位置：透明且向下偏移 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%); /* 结束位置：完全可见且返回原位 */
+  }
+}
+@keyframes moveOut {
+  from {
+    opacity: 1;
+    transform: translateY(0%); /* 初始位置：透明且向下偏移 */
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%); /* 结束位置：完全可见且返回原位 */
+  }
+}

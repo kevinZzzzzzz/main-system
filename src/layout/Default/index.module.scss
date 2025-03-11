@@ -1,0 +1,9 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+  // padding: 64px 0 0 0;
+  &__context {
+    height: 100vh;
+  }
+}
